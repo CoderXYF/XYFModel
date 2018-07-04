@@ -179,4 +179,4 @@ NSDictionary *json = [p dictionaryFromModel];
 
 许可证
 ==============
-YYModel 使用 MIT 许可证，详情见 LICENSE 文件。
+XYFModel 使用 MIT 许可证，详情见 LICENSE 文件。
