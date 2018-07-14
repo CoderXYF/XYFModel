@@ -17,9 +17,9 @@ NSDictionary *friendDic2 = @{@"name" : @"wangwu", @"age" : @51, @"child" :
 @{@"name" : @"xiaolin", @"age" : @2}}, @"gender" : @"male", @"phones" :   
 @[@{@"phoneNum" : @"13898762344", @"color" : [UIColor orangeColor]},   
 @{@"phoneNum" : @"17732435436", @"color" : [UIColor redColor]}]};
-NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :   
+NSDictionary *dic = @{@"id" : @"666", @"name" : @"Father", @"age" : @48, @"child" :   
 @{@"name" : @"son", @"age" : @24, @"child" : @{@"name" : @"grandSon", @"age" : @1}},   
-@"gender" : @"male", @"friends" : @[friendDic0, friendDic1, friendDic2],   
+@"gender" : @"male", @"sex" : @(GenderMale), @"friends" : @[friendDic0, friendDic1, friendDic2],   
 @"school" : @"wuhuyizhong", @"phones" : @[@[@{@"phoneNum" : @"13198763222",   
 @"color" : [UIColor blueColor]}, @{@"phoneNum" : @"18898873234",   
 @"color" : [UIColor blackColor]}], @[@{@"phoneNum" : @"15538789000",   
@@ -28,8 +28,15 @@ NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :
 
 // Model:
 #import <UIKit/UIKit.h>
+typedef enum : NSUInteger {
+    GenderMale,
+    GenderFemale,
+    GenderUnknown,
+} Gender;
 @class Phone;
 @interface Person : NSObject
+@property (nonatomic, copy) NSString *personId;
+@property (nonatomic, assign) Gender sex;
 @property (nonatomic, assign) NSRange range;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *age;
@@ -46,6 +53,10 @@ NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :
 #import <objc/message.h>
 #import "Phone.h"
 @implementation Person
++ (NSDictionary *)dictionaryKeyMappingModelKey {
+    return @{@"id" : @"personId"
+             };
+}
 + (NSDictionary *)modelClassInArray {
     return @{@"phones" : [Phone class],
              @"friends" : [Person class]
@@ -110,9 +121,9 @@ NSDictionary *friendDic2 = @{@"name" : @"wangwu", @"age" : @51, @"child" :
 @{@"name" : @"xiaolin", @"age" : @2}}, @"gender" : @"male", @"phones" :   
 @[@{@"phoneNum" : @"13898762344", @"color" : [UIColor orangeColor]},   
 @{@"phoneNum" : @"17732435436", @"color" : [UIColor redColor]}]};
-NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :   
+NSDictionary *dic = @{@"id" : @"666", @"name" : @"Father", @"age" : @48, @"child" :   
 @{@"name" : @"son", @"age" : @24, @"child" : @{@"name" : @"grandSon", @"age" : @1}},   
-@"gender" : @"male", @"friends" : @[friendDic0, friendDic1, friendDic2],   
+@"gender" : @"male", @"sex" : @(GenderMale), @"friends" : @[friendDic0, friendDic1, friendDic2],   
 @"school" : @"wuhuyizhong", @"phones" : @[@[@{@"phoneNum" : @"13198763222",   
 @"color" : [UIColor blueColor]}, @{@"phoneNum" : @"18898873234",   
 @"color" : [UIColor blackColor]}], @[@{@"phoneNum" : @"15538789000",   
@@ -121,8 +132,15 @@ NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :
 
 // Model:
 #import <UIKit/UIKit.h>
+typedef enum : NSUInteger {
+    GenderMale,
+    GenderFemale,
+    GenderUnknown,
+} Gender;
 @class Phone;
 @interface Person : NSObject
+@property (nonatomic, copy) NSString *personId;
+@property (nonatomic, assign) Gender sex;
 @property (nonatomic, assign) NSRange range;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *age;
@@ -139,6 +157,10 @@ NSDictionary *dic = @{@"name" : @"Father", @"age" : @48, @"child" :
 #import <objc/message.h>
 #import "Phone.h"
 @implementation Person
++ (NSDictionary *)dictionaryKeyMappingModelKey {
+    return @{@"id" : @"personId"
+             };
+}
 + (NSDictionary *)modelClassInArray {
     return @{@"phones" : [Phone class],
              @"friends" : [Person class]
