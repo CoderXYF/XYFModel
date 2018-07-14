@@ -12,6 +12,11 @@
 
 @implementation Person
 
++ (NSDictionary *)dictionaryKeyMappingModelKey {
+    return @{@"id" : @"personId"
+             };
+}
+
 + (NSDictionary *)modelClassInArray {
     return @{@"phones" : [Phone class],
              @"friends" : [Person class]

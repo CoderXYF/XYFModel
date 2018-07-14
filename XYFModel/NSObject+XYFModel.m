@@ -15,10 +15,14 @@
     NSMutableArray *temArr = @[].mutableCopy;
     for (id object in value) {
         if ([object isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *modelClassMapperDic = ((NSDictionary *(*)(id, SEL)) objc_msgSend)(self, sel_registerName("modelClassInArray"));
-            Class modelClass = modelClassMapperDic[ivarName];
-            if (modelClass) {
-                [temArr addObject:[modelClass modelWithDictionary:object]];
+            if ([[self class] respondsToSelector:sel_registerName("modelClassInArray")]) {
+                NSDictionary *modelClassMapperDic = ((NSDictionary *(*)(id, SEL)) objc_msgSend)([self class], sel_registerName("modelClassInArray"));
+                Class modelClass = modelClassMapperDic[ivarName];
+                if (modelClass) {
+                    [temArr addObject:[modelClass modelWithDictionary:object]];
+                } else {
+                    [temArr addObject:object];
+                }
             } else {
                 [temArr addObject:object];
             }
@@ -34,6 +38,9 @@
 }
 
 + (instancetype)modelWithDictionary:(NSDictionary *)aDictionary {
+    if ([NSBundle bundleForClass:[self class]] != [NSBundle mainBundle]) {
+        NSLog(@"XYFModel warm hint: you are using non-custom class.");
+    }
     NSObject *obj = [[self alloc] init];
     unsigned int outCount = 0;
     Ivar *vars = class_copyIvarList([self class], &outCount);
@@ -41,7 +48,20 @@
         Ivar var = vars[i];
         NSString *ivarName = [[NSString stringWithUTF8String:ivar_getName(var)] stringByReplacingOccurrencesOfString:@"_" withString:@""];
         NSString *ivarType = [[[NSString stringWithUTF8String:ivar_getTypeEncoding(var)] stringByReplacingOccurrencesOfString:@"\"" withString:@""] stringByReplacingOccurrencesOfString:@"@" withString:@""];
-        id value = aDictionary[ivarName];
+        
+        NSString *dicKey = ivarName;
+        if ([[self class] respondsToSelector:sel_registerName("dictionaryKeyMappingModelKey")]) {
+            id keyMapper = ((NSDictionary *(*)(id, SEL)) objc_msgSend)([self class], sel_registerName("dictionaryKeyMappingModelKey"));
+            if ([keyMapper isKindOfClass:[NSDictionary class]]) {
+                for (NSString *key in [keyMapper allKeys]) {
+                    if ([keyMapper[key] isEqualToString:ivarName]) {
+                        dicKey = key;
+                    }
+                }
+            }
+        }
+        
+        id value = aDictionary[dicKey];
         Class cls = NSClassFromString(ivarType);
         if ([value isKindOfClass:[NSArray class]]) {
             value = [self handleArrayValueWithValue:value ivarName:ivarName];
@@ -117,7 +137,7 @@
 }
 
 - (NSDictionary *)dictionaryFromModel {
-    return [self dictionaryFromModelHasZeroValue:NO];
+    return [self dictionaryFromModelHasZeroValue:YES];
 }
 
 - (NSArray *)handleModelArrayWithValue:(NSArray *)value flag:(BOOL)flag {

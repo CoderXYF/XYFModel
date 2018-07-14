@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    GenderMale,
+    GenderFemale,
+    GenderUnknown,
+} Gender;
+
 @class Phone;
 
 @interface Person : NSObject
+
+@property (nonatomic, copy) NSString *personId;
+
+@property (nonatomic, assign) Gender sex;
 
 @property (nonatomic, assign) NSRange range;
 
