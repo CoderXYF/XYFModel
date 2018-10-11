@@ -1,5 +1,5 @@
 # XYFModel
-iOS, Objective-C, 字典转模型, 模型转字典, 模型归档接档, 安全、轻量、使用简单 Dictionary to model, model to dictionary, archive model to file and unarchive model from file, Simple, safety and light weight.
+Dictionary to model, model to dictionary, archive model to file and unarchive model from file, Simple, safety, reliable and light weight，using in iOS, Objective-C language. 
   
   Usage
 ==============
@@ -103,7 +103,7 @@ XYFModel is provided under the MIT license. See LICENSE file for details.
 ---
 中文介绍
 ==============
-安全、轻量、使用简单的 iOS/OSX 模型转换框架。<br/>
+iOS, Objective-C, 字典转模型, 模型转字典, 模型归档接档, 安全，轻量，可靠，使用简单。<br/>
 
 使用方法
 ==============
