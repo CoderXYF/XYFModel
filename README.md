@@ -98,7 +98,6 @@ This library requires `iOS 8.0+`.
 License
 ==============
 XYFModel is provided under the MIT license. See LICENSE file for details.  
-
 <br/><br/>
 ---
 中文介绍
