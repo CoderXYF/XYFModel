@@ -206,4 +206,7 @@ XYFModel 使用 MIT 许可证，详情见 LICENSE 文件。
 联系作者和学习交流
 ==============
 ![img](https://github.com/CoderXYF/XYFModel/blob/master/XYFModel技术交流群群二维码.png)  
-有任何疑问或者想要探讨关于XYFModel字典模型相互转换以及归档接档或者runtime相关知识等可以加qq群790756256,我们一起探讨交流相互学习!
+有任何疑问或者想要探讨关于XYFModel字典模型相互转换以及归档接档或者runtime相关知识等可以加qq群790756256,我们一起探讨交流相互学习!  
+# Contact me (联系我)  
+QQ：2016003298  
+微信（WeChat）：yz33915958
