@@ -4,7 +4,7 @@ Dictionary to model, model to dictionary, archive model to file and unarchive mo
   Usage
 ==============
 
-### Model dictionry convert
+### Model JSON(dictionry) convert
 ```objc
 // dictionry:
 NSDictionary *friendDic0 = @{@"name" : @"zhangsan", @"age" : @50, @"child" :   
@@ -105,12 +105,12 @@ XYFModel is provided under the MIT license. See LICENSE file for details.
 ==============
 iOS, Objective-C, 字典转模型, 模型转字典, 模型归档接档, 安全，轻量，可靠，使用简单。<br/>
 
-使用方法
+使用
 ==============
 
-### 简单的 Model 与 JSON 相互转换
+### 模型 与 JSON（字典） 相互转换
 ```objc
-// dictionry:
+// 字典:
 NSDictionary *friendDic0 = @{@"name" : @"zhangsan", @"age" : @50, @"child" :   
 @{@"name" : @"xiaohua", @"age" : @26, @"child" :   
 @{@"name" : @"xiaotian", @"age" : @3, @"gender" : @"female"}}, @"gender" : @"male"};
@@ -130,7 +130,7 @@ NSDictionary *dic = @{@"id" : @"666", @"name" : @"Father", @"age" : @48, @"child
 @"color" : [UIColor purpleColor]}, @{@"phoneNum" : @"18745379421",   
 @"color" : [UIColor orangeColor]}]], @"height" : @172.5, @"weight" : @"67"};
 
-// Model:
+// 模型:
 #import <UIKit/UIKit.h>
 typedef enum : NSUInteger {
     GenderMale,
@@ -168,15 +168,15 @@ typedef enum : NSUInteger {
 }
 @end  
 
-// Convert json(dictionary) to model:
+// 转 JSON(字典) 为 模型:
 Person *person = [Person modelWithDictionary:dic];
-// Archive model to path
+// 归档模型到路径
 NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
 NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"person.archiver"];  
 [NSKeyedArchiver archiveRootObject:person toFile:path];
-// Unarchive model from path  
+// 从路径解档模型  
 Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-// Convert model to json(dictionary):
+// 转 模型 为 JSON(字典):
 NSDictionary *json = [p dictionaryFromModel];
 ```
 
