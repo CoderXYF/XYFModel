@@ -10,6 +10,30 @@
 
 @interface NSObject (XYFModel)
 
+/********* 使用指南 **********/
+/*
+1.对于字典中出现例如关键字id这种的字符串key，或者因为其他情况，模型中不能直接使用某个或者某几个字典的key作为对应模型的属性名称，这时候可以通过实现+ (NSDictionary *)modelClassInArray来解决，让模型使用跟字典key不一样名称的属性来接收该key对应的value值，例如：
+ + (NSDictionary *)dictionaryKeyMappingModelKey {
+     return @{@"id" : @"personId"};
+ }
+ 
+2.如果模型的一个属性是装着其他模型的数组（对应Json字典中的装着字典对象的数组value值）,那么可以在这个模型中实现+ (NSDictionary *)modelClassInArray方法来将其转为盛放对应模型的数组，并以此类推，例如：
+ + (NSDictionary *)modelClassInArray {
+      return @{@"phones" : [Phone class],
+      @"friends" : [Person class]
+      };
+ }
+ 
+Github：https://github.com/CoderXYF
+作者：XYFCoder
+QQ：2016003298
+微信：yz33915958
+ps：欢迎跟作者一起学习交流。
+
+*/
+
+/********* 这是分隔线 **********/
+
 /**
  字典转模型
  

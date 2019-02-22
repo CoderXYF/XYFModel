@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04781E44221FD40A00DC60B7 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 04781E43221FD3AA00DC60B7 /* UIImage+image.m */; };
 		04BEB18320EC860F00D0DC21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB18220EC860F00D0DC21 /* AppDelegate.m */; };
 		04BEB18620EC860F00D0DC21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB18520EC860F00D0DC21 /* ViewController.m */; };
 		04BEB18920EC860F00D0DC21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BEB18720EC860F00D0DC21 /* Main.storyboard */; };
@@ -19,12 +20,12 @@
 		04BEB1AA20EC861F00D0DC21 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB19E20EC861F00D0DC21 /* NSObject+Property.m */; };
 		04BEB1AB20EC861F00D0DC21 /* Monkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB1A220EC861F00D0DC21 /* Monkey.m */; };
 		04BEB1AC20EC861F00D0DC21 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB1A320EC861F00D0DC21 /* Bird.m */; };
-		04BEB1AD20EC861F00D0DC21 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB1A420EC861F00D0DC21 /* UIImage+image.m */; };
 		04BEB1AE20EC861F00D0DC21 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB1A520EC861F00D0DC21 /* Person.m */; };
 		04BEB1B220EC866400D0DC21 /* NSObject+XYFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEB1B120EC866400D0DC21 /* NSObject+XYFModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04781E43221FD3AA00DC60B7 /* UIImage+image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
 		04BEB17E20EC860F00D0DC21 /* XYFModelAndRuntimeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYFModelAndRuntimeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BEB18120EC860F00D0DC21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04BEB18220EC860F00D0DC21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		04BEB1A120EC861F00D0DC21 /* UIControl+ClickBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickBlock.h"; sourceTree = "<group>"; };
 		04BEB1A220EC861F00D0DC21 /* Monkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monkey.m; sourceTree = "<group>"; };
 		04BEB1A320EC861F00D0DC21 /* Bird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
-		04BEB1A420EC861F00D0DC21 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
 		04BEB1A520EC861F00D0DC21 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		04BEB1A620EC861F00D0DC21 /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		04BEB1B020EC866400D0DC21 /* NSObject+XYFModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+XYFModel.h"; sourceTree = "<group>"; };
@@ -66,6 +66,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04781E41221FD20B00DC60B7 /* Runtime Practice */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB1A620EC861F00D0DC21 /* NSObject+Property.h */,
+				04BEB19E20EC861F00D0DC21 /* NSObject+Property.m */,
+				04BEB1A120EC861F00D0DC21 /* UIControl+ClickBlock.h */,
+				04BEB19A20EC861F00D0DC21 /* UIControl+ClickBlock.m */,
+				04BEB19F20EC861F00D0DC21 /* UIImage+image.h */,
+				04781E43221FD3AA00DC60B7 /* UIImage+image.m */,
+				04BEB19720EC861F00D0DC21 /* Bird.h */,
+				04BEB1A320EC861F00D0DC21 /* Bird.m */,
+				04BEB19B20EC861F00D0DC21 /* Monkey.h */,
+				04BEB1A220EC861F00D0DC21 /* Monkey.m */,
+				04BEB19920EC861F00D0DC21 /* MyClass.h */,
+				04BEB19C20EC861F00D0DC21 /* MyClass.m */,
+			);
+			path = "Runtime Practice";
+			sourceTree = "<group>";
+		};
+		04781E42221FD24C00DC60B7 /* XYFModel Use Model */ = {
+			isa = PBXGroup;
+			children = (
+				04BEB1A020EC861F00D0DC21 /* Person.h */,
+				04BEB1A520EC861F00D0DC21 /* Person.m */,
+				04BEB19820EC861F00D0DC21 /* Phone.h */,
+				04BEB19D20EC861F00D0DC21 /* Phone.m */,
+			);
+			path = "XYFModel Use Model";
+			sourceTree = "<group>";
+		};
 		04BEB17520EC860F00D0DC21 = {
 			isa = PBXGroup;
 			children = (
@@ -86,22 +116,8 @@
 		04BEB18020EC860F00D0DC21 /* XYFModelAndRuntimeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				04BEB19720EC861F00D0DC21 /* Bird.h */,
-				04BEB1A320EC861F00D0DC21 /* Bird.m */,
-				04BEB19B20EC861F00D0DC21 /* Monkey.h */,
-				04BEB1A220EC861F00D0DC21 /* Monkey.m */,
-				04BEB19920EC861F00D0DC21 /* MyClass.h */,
-				04BEB19C20EC861F00D0DC21 /* MyClass.m */,
-				04BEB1A620EC861F00D0DC21 /* NSObject+Property.h */,
-				04BEB19E20EC861F00D0DC21 /* NSObject+Property.m */,
-				04BEB1A020EC861F00D0DC21 /* Person.h */,
-				04BEB1A520EC861F00D0DC21 /* Person.m */,
-				04BEB19820EC861F00D0DC21 /* Phone.h */,
-				04BEB19D20EC861F00D0DC21 /* Phone.m */,
-				04BEB1A120EC861F00D0DC21 /* UIControl+ClickBlock.h */,
-				04BEB19A20EC861F00D0DC21 /* UIControl+ClickBlock.m */,
-				04BEB19F20EC861F00D0DC21 /* UIImage+image.h */,
-				04BEB1A420EC861F00D0DC21 /* UIImage+image.m */,
+				04781E42221FD24C00DC60B7 /* XYFModel Use Model */,
+				04781E41221FD20B00DC60B7 /* Runtime Practice */,
 				04BEB18120EC860F00D0DC21 /* AppDelegate.h */,
 				04BEB18220EC860F00D0DC21 /* AppDelegate.m */,
 				04BEB18420EC860F00D0DC21 /* ViewController.h */,
@@ -194,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04781E44221FD40A00DC60B7 /* UIImage+image.m in Sources */,
 				04BEB1A920EC861F00D0DC21 /* Phone.m in Sources */,
 				04BEB1A720EC861F00D0DC21 /* UIControl+ClickBlock.m in Sources */,
 				04BEB1AE20EC861F00D0DC21 /* Person.m in Sources */,
@@ -202,7 +219,6 @@
 				04BEB18620EC860F00D0DC21 /* ViewController.m in Sources */,
 				04BEB1A820EC861F00D0DC21 /* MyClass.m in Sources */,
 				04BEB19120EC861000D0DC21 /* main.m in Sources */,
-				04BEB1AD20EC861F00D0DC21 /* UIImage+image.m in Sources */,
 				04BEB1B220EC866400D0DC21 /* NSObject+XYFModel.m in Sources */,
 				04BEB1AB20EC861F00D0DC21 /* Monkey.m in Sources */,
 				04BEB18320EC860F00D0DC21 /* AppDelegate.m in Sources */,

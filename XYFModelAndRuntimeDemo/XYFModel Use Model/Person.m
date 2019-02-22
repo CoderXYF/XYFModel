@@ -13,8 +13,7 @@
 @implementation Person
 
 + (NSDictionary *)dictionaryKeyMappingModelKey {
-    return @{@"id" : @"personId"
-             };
+    return @{@"id" : @"personId"};
 }
 
 + (NSDictionary *)modelClassInArray {
@@ -23,8 +22,10 @@
              };
 }
 
+/***** 下面这些是测试Runtime的练习 *****/
+
 void run(id xxx, SEL yyy, NSString *string) {
-//    NSLog(@"--->%@", string);
+    //    NSLog(@"--->%@", string);
     NSLog(@"%@, %@, %@", xxx, NSStringFromSelector(yyy), string);
 }
 

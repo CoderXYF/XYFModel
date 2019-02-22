@@ -9,7 +9,7 @@
 #import "NSObject+XYFModel.h"
 #import <objc/message.h>
 
-@implementation NSObject (xyf_model)
+@implementation NSObject (XYFModel)
 
 + (NSArray *)handleArrayValueWithValue:(NSArray *)value ivarName:(NSString *)ivarName {
     NSMutableArray *temArr = @[].mutableCopy;
